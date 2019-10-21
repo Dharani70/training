@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<div ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <div class="row" style="margin-top:50px;">
+            <form novalidate class="form-horizontal col-sm-6 col-sm-offset-3" name="CuboidForm">
+                <div class="col-sm-12 text-center">
+                          
+                    <h1 style="color: cornflowerblue">ICuboid Registration form</h1>
+                    </div>
+                    
+
+                   
+                
+                <style>
+                    body {
+                        background-color: aqua;
+                    }
+
+                </style>
+
+
+                <!-- list -->
+                <form action="/action_page.php">
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">FirstName:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="register.FirstName"
+                            placeholder="Enter FirstName" name="FirstName" maxlength="25" required>
+                            <span ng-show="CuboidForm.FirstName.$invalid"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">LastName:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="register.LastName"
+                            placeholder="Enter lastName" name="LastName" maxlength="5" required>
+                            <span ng-show="CuboidForm.LastName.$invalid"></span>
+
+                    </div>
+                </div>
+               
+                
+
+                 <div class="form-group">
+                    <label class="control-label col-sm-2">Email:</label>
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" ng-model="register.Email" placeholder="Enter email" name="email" required>
+                    <span ng-show="CuboidForm.Email.$invalid"></span>
+                    
+
+                  </div>
+                </div>
+                  
+ 
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Address:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="register.Address1"
+                            placeholder="Enter Address 1 DoorNo/Street" name="Address1" required><br />
+                            <span ng-show="CuboidForm.Address1.$invalid"></span>
+
+                        <input type="text" class="form-control" ng-model="register.Address2"
+                            placeholder="Enter Address 2 Post/Taluk" name="Address2" required><br />
+                            <span ng-show="CuboidForm.Address2.$invalid"></span>
+
+                        <input type="text" class="form-control" ng-model="register.Address3" placeholder="Enter Address 3"
+                            name="Address3" required>
+                            <span ng-show="CuboidForm.Address3.$invalid"></span>
+
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="PhoneNo">PhoneNo:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="register.PhoneNo" placeholder="Enter PhoneNo"
+                            name="PhoneNo" maxlength="13" required>
+                            <span ng-show="CuboidForm.PhoneNo.$invalid"></span>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="DateOfBirth">DateOfBirth:</label>
+                    <div class="col-sm-10">
+                        <input type="Date" class="form-control" ng-model="register.Dob" min="01-01-1998"
+                            max="31-12-2099" name="DateOfBirth">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="Gender">Gender:</label>
+                    <div class="col-sm-10">
+                        <select ng-model="register.Gender" class="form-control"
+                            ng-options="item.Name as item.Name for item in Gender"></select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="Country">Country:</label>
+                    <div class="col-sm-10">
+                        <select ng-model="register.Country" class="form-control"
+                            ng-options="item.Name as item.Name for item in Country"></select>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="District">District:</label>
+                    <div class="col-sm-10">
+                        <select ng-model="register.District" class="form-control"
+                            ng-options="item.Name as item.Name for item in District"></select>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="State">State:</label>
+                    <div class="col-sm-10">
+                        <select ng-model="register.State" class="form-control"
+                            ng-options="item.Name as item.Name for item in State"></select>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="PinCode">PinCode:</label>
+                    <div class="col-sm-10">
+                        <select ng-model="register.PinCode" class="form-control"
+                            ng-options="item.Name as item.Name for item in PinCode"></select>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="EmployeeCode">EmployeeCode:</label>
+                    <div class="col-sm-10">
+                        <select ng-model="register.EmployeeCode" class="form-control"
+                            ng-options="item.Name as item.Name for item in EmployeeCode"></select>
+
+                    </div>
+                </div>
+
+                <body>
+                    <div ng-init="Dharani = 'https://www.icuboid.com'">
+                        <p style="color:red; text-align:center;">For further reference visit our innovation website <a ng-href="{{Dharani}}">{{Dharani}}</a></p>
+                    </div>
+                </body>
+
+                <div class="col-sm-12" >
+                    <input type="submit" class="btn btn-success" ng-disabled="CuboidForm.register.$dirty && CuboidForm.register.$invalid || CuboidForm.$dirty && CuboidForm.$invalid" ng-click="saveform(registerdata)">
+                    <button type="reset" class="btn btn-danger">reset</button>
+                </div>
+            </form>
+
+            <div class="table-responsive col-sm-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="color: orangered;">FirstName</th>
+                            <th style="color: orangered;">LastName</th>
+                            <th style="color: orangered;">Email</th>
+                            <th style="color: orangered;">Address1</th>
+                            <th style="color: orangered;">Address2</th>
+                            <th style="color: orangered;">Address3</th>
+                            <th style="color: orangered;">PhoneNo</th>
+                            <th style="color: orangered;">DateOfBirth</th>
+                            <th style="color: orangered;">Gender</th>
+                            <th style="color: orangered;">Country</th>
+                            <th style="color: orangered;">District</th>
+                            <th style="color: orangered;">State</th>
+                            <th style="color: orangered;">PinCode</th>
+                            <th style="color: orangered;">EmployeeCode</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in registers">
+                        <tr>
+                            <td>{{item.FirstName}}</td>
+                            <td>{{item.LastName}}</td>
+                            <td>{{item.Email}}</td>
+                            <td>{{item.Address1}}</td>
+                            <td>{{item.Address2}}</td>
+                            <td>{{item.Address3}}</td>
+                            <td>{{item.PhoneNo}}</td>
+                            <td>{{item.DateOfBirth}}</td>
+                            <td>{{item.Gender}}</td>
+                            <td>{{item.Country}}</td>
+                            <td>{{item.District}}</td>
+                            <td>{{item.State}}</td>
+                            <td>{{item.PinCode}}</td>
+                            <td>{{item.EmployeeCode}}</td>
+
+                            <td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</html>
